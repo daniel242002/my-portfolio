@@ -1,0 +1,15 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre mi",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "cv": "CV",
+    "contact": "Contacto"
+  },
+  "home": {
+    "greeting": "Hola, soy",
+    "job": "Desarrollador web",
+    "contact": "Contacto"
+  }
+}

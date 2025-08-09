@@ -1,0 +1,33 @@
+/* assets/css/main.css */
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  --navbar-bg-light: #ecfdf5;
+   /* 🌞 Modo Claro (versión adaptable) */
+  --primary-color-light: #ffffff;
+  --secondary-color-light: #048243;
+  --btn-light: #22c55e;
+  --text-color-light: #0f172a;
+
+  --navbar-bg-dark: rgb(6, 15, 33);
+  /* 🌚 Modo Oscuro (base principal) */
+  --primary-color-dark: #0f172a; /* Negro */
+  --secondary-color-dark: #61FF8B; /* Verde */
+  --btn-hover-dark: #22c55e; /* Verde */
+  --text-color-dark: #f8fafc; /* Texto claro */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-color-light);
+  color: var(--text-color-light);
+}
+
+.dark body {
+  background-color: var(--primary-color-dark);
+  color: var(--text-color-dark);
+}

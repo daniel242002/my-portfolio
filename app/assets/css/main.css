@@ -3,8 +3,12 @@
 @import "@nuxt/ui";
 
 :root {
-  --navbar-bg-light: #ecfdf5;
-   /* 🌞 Modo Claro (versión adaptable) */
+  --font-sans: "Outfit", sans-serif;
+}
+
+:root {
+  --navbar-bg-light: #ebfbf2;
+  /* 🌞 Modo Claro (versión adaptable) */
   --primary-color-light: #ffffff;
   --secondary-color-light: #048243;
   --btn-light: #22c55e;
@@ -13,9 +17,13 @@
   --navbar-bg-dark: rgb(6, 15, 33);
   /* 🌚 Modo Oscuro (base principal) */
   --primary-color-dark: #0f172a; /* Negro */
-  --secondary-color-dark: #61FF8B; /* Verde */
+  --secondary-color-dark: #61ff8b; /* Verde */
   --btn-hover-dark: #22c55e; /* Verde */
   --text-color-dark: #f8fafc; /* Texto claro */
+
+  --ti-cursor-font-size: 2rem;
+  --ti-cursor-font-weight: 300;
+  --ti-cursor-color: #0f172a;
 }
 
 html {
@@ -30,4 +38,57 @@ body {
 .dark body {
   background-color: var(--primary-color-dark);
   color: var(--text-color-dark);
+}
+
+.dark {
+  --font-sans: "Black Ops One", system-ui;
+  --ti-cursor-color: var(--text-gray-300);
+}
+
+::view-transition-group(root) {
+  animation-duration: 0.7s;
+  animation-timing-function: var(--expo-out);
+}
+      
+::view-transition-new(root) {
+  animation-name: reveal-light;
+}
+
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: none;
+  z-index: -1;
+}
+.dark::view-transition-new(root) {
+  animation-name: reveal-dark;
+}
+
+@keyframes reveal-dark {
+  from {
+    clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
+  }
+  to {
+    clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%);
+  }
+}
+
+@keyframes reveal-light {
+  from {
+    clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%);
+  }
+  to {
+    clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
+  }
+}
+
+div[role="dialog"][data-side="right"] {
+  max-width: 45rem !important;
+}
+
+.light button[role="tab"][aria-selected="false"] {
+  background-color: var(--color-slate-400); /* el color que quieras */
+}
+
+.light div[role="dialog"][data-side="right"] {
+  background-color: var(--color-slate-100);
 }

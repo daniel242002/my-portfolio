@@ -9,7 +9,48 @@
   },
   "home": {
     "greeting": "Hola, soy",
-    "job": "Desarrollador web",
+    "typedDescription-1": "Desarrollador de software",
+    "typedDescription-2": "Desarrollador de aplicaciones web",
+    "typedDescription-3": "Desarrollador full stack",
     "contact": "Contacto"
+  },
+  "about": {
+    "title": "Sobre mi",
+    "paragraph-1": "Soy una persona curiosa a la que le gusta entender cómo funcionan las cosas y construir soluciones con código.",
+    "paragraph-2": "Me interesa todo lo relacionado con el desarrollo web, y disfruto aprender nuevas herramientas mientras trabajo en ideas que me emocionan.",
+    "paragraph-3": "No busco ser perfecto, solo mejorar un poco cada dia..."
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "notice-label": "En desarrollo",
+    "sport-partners": {
+      "name": "Sport Partners",
+      "description": "Una plataforma para aprender sobre tu deporte favorito, buscar eventos y motivarte con contenido multimedia."
+    },
+    "saas-system": {
+      "name": "Sistema Saas",
+      "description": "Sistema de gestión para multiples empresas. Administrar clientes, empleados, facturación y mucho más."
+    },
+    "pastry-shop": {
+      "name": "Tienda de pastelería",
+      "description": "Una tienda de pastelería con carrito de compras, pasarela de pago y panel de administración."
+    },
+    "text-btn": "Visitar sitio"
+  },
+  "contact": {
+    "title": "Contacto",
+    "label-name": "Nombre",
+    "label-email": "Correo electrónico",
+    "label-message": "Mensaje",
+    "btn-send": "Enviar"
+  },
+  "cv": {
+    "title": "Mi CV"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados"
   }
 }

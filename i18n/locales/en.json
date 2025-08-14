@@ -9,7 +9,48 @@
   },
   "home": {
     "greeting": "Hello, I'm",
-    "job": "Web developer",
+    "typedDescription-1": "Software developer",
+    "typedDescription-2": "Web application developer",
+    "typedDescription-3": "Full stack developer",
     "contact": "Contact"
+  },
+  "about": {
+    "title": "About me",
+    "paragraph-1": "I'm a curious person who likes to understand how things work and build solutions with code.",
+    "paragraph-2": "I'm interested in everything related to web development, and I enjoy learning new tools while working on ideas that excite me.",
+    "paragraph-3": "No busco ser perfecto, solo mejorar un poco cada día..."
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "notice-label": "In development",
+    "sport-partners": {
+      "name": "Sport Partners",
+      "description": "A platform to learn about your favorite sport, find events and motivate yourself with multimedia content."
+    },
+    "saas-system": {
+      "name": "SaaS System",
+      "description": "Multi-company management system. Manage customers, employees, billing, and much more."
+    },
+    "pastry-shop": {
+      "name": "Cake Shop",
+      "description": "A pastry shop with a shopping cart, payment gateway, and admin panel."
+    },
+    "text-btn": "visit site"
+  },
+  "contact": {
+    "title": "Contact",
+    "label-name": "Name",
+    "label-email": "Email",
+    "label-message": "Message",
+    "btn-send": "Send"
+  },
+  "cv": {
+    "title": "My CV"
+  },
+  "footer": {
+    "copyright": "All rights reserved"
   }
 }

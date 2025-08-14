@@ -5,7 +5,7 @@
         <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
-            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500"
+            class="relative inline-flex items-center justify-center rounded-md p-2 text-[var(--text-color-light)] dark:text-gray-300 hover:bg-white/5 hover:text-gray-400 focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500"
           >
             <span class="absolute -inset-0.5" />
             <span class="sr-only">Open main menu</span>
@@ -17,9 +17,49 @@
           class="flex flex-1 items-center justify-end md:items-stretch md:justify-start"
         >
           <div class="flex shrink-0 items-center">
-            <UIcon name="i-devicon-plain-chakraui" class="h-10 w-10 px-8" />
+            <!-- translate, dark mode, github -->
+            <div
+              class="flex md:hidden absolute inset-y-0 right-0 items-center pr-18 md:static md:inset-auto md:ml-6 md:pr-0 gap-3"
+            >
+              <USelect
+                :items="locales.map((l:any) => ({ label: l.name === 'English' ? 'EN' : 'ES', value: l.code }))"
+                v-model="value"
+                class="w-auto font-semibold dark:font-thin border-0 bg-transparent"
+              />
+              <ClientOnly v-if="!colorMode?.forced">
+                <UButton
+                  class="cursor-pointer dark:text-[var(--text-color-dark)] text-[var(--text-color-light)] hover:bg-transparent"
+                  :icon="
+                    colorMode.value === 'dark'
+                      ? 'i-lucide-sun'
+                      : 'i-lucide-moon'
+                  "
+                  variant="ghost"
+                  @click="handleNavbarItemClick()"
+                />
+
+                <template #fallback>
+                  <div class="size-8" />
+                </template>
+              </ClientOnly>
+
+              <a
+                class="hover:text-white flex items-center"
+                href="https://github.com/daniel242002"
+                target="_blank"
+              >
+                <UIcon name="i-grommet-icons-github" class="h-6 w-6" />
+              </a>
+            </div>
+            <div
+              class="flex shrink-0 items-center text-[var(--text-color-light)] dark:text-gray-300 w-14 md:w-20"
+            >
+            <a href="/">
+              <Mylogo />
+            </a>
+            </div>
           </div>
-          <div class="hidden md:ml-6 md:block">
+          <div class="hidden md:ml-4 md:flex flex-col md:justify-center">
             <div class="flex space-x-3">
               <a
                 v-for="item in navBarItems"
@@ -27,9 +67,9 @@
                 :href="item.href"
                 :class="[
                   item.current
-                    ? 'bg-gray-200 dark:bg-gray-800 text-[var(--secondary-color-light)] dark:text-[var(--secondary-color-dark)] border-b border-[var(--secondary-color-light)] dark:border-[var(--secondary-color-dark)] rounded-b-none'
-                    : 'text-[var(--text-color-light)] dark:text-gray-300 hover:bg-white/5 hover:text-white',
-                  'flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium',
+                    ? 'bg-white dark:bg-gray-800 text-[var(--secondary-color-light)] dark:text-[var(--secondary-color-dark)] border-b border-[var(--secondary-color-light)] dark:border-[var(--secondary-color-dark)] rounded-b-none'
+                    : 'text-[var(--text-color-light)] dark:text-gray-300 hover:bg-white/55 dark:hover:bg-white/5 dark:hover:text-gray-300',
+                  'flex items-center gap-2 rounded-md px-3 py-2 text-md dark:text-sm font-semibold dark:font-[10]',
                 ]"
                 :aria-current="item.current ? 'page' : undefined"
               >
@@ -47,21 +87,23 @@
           <USelect
             :items="locales.map((l:any) => ({ label: l.name === 'English' ? 'EN' : 'ES', value: l.code }))"
             v-model="value"
-            class="w-auto font-semibold border-0 bg-transparent"
+            class="w-auto font-semibold dark:font-thin border-0 bg-transparent"
           />
           <ClientOnly v-if="!colorMode?.forced">
             <UButton
               class="cursor-pointer dark:text-[var(--text-color-dark)] text-[var(--text-color-light)] hover:bg-transparent"
-              :icon="isDark ? 'i-lucide-sun' : 'i-lucide-moon'"
+              :icon="
+                colorMode.value === 'dark' ? 'i-lucide-sun' : 'i-lucide-moon'
+              "
               variant="ghost"
-              @click="isDark = !isDark"
+              @click="handleNavbarItemClick()"
             />
 
             <template #fallback>
               <div class="size-8" />
             </template>
           </ClientOnly>
-          
+
           <a
             class="hover:text-white flex items-center"
             href="https://github.com/daniel242002"
@@ -81,8 +123,8 @@
           :class="[
             item.current
               ? 'bg-gray-900 text-white'
-              : 'text-gray-300 hover:bg-white/5 hover:text-white',
-            'flex items-center gap-2 rounded-md px-3 py-2 text-base font-medium',
+              : 'text-[var(--text-color-light)] dark:text-gray-300 hover:bg-white/5 hover:text-white',
+            'flex items-center gap-2 rounded-md px-3 py-3 text-base font-medium',
           ]"
           :aria-current="item.current ? 'page' : undefined"
         >
@@ -117,14 +159,15 @@ watchEffect(() => {
 
 // Modo oscuro
 const colorMode = useColorMode();
-const isDark = computed({
-  get() {
-    return colorMode.value === "dark";
-  },
-  set(_isDark) {
-    colorMode.preference = _isDark ? "dark" : "light";
-  },
-});
+const handleNavbarItemClick = () => {
+  if (!document.startViewTransition) {
+    colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+  } else {
+    document.startViewTransition(() => {
+      colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+    });
+  }
+};
 
 // Items de navegación
 const navBarItems = ref([
@@ -141,22 +184,10 @@ const navBarItems = ref([
     icon: "i-lucide-user",
   },
   {
-    name: "skills",
-    href: "#skills",
-    current: false,
-    icon: "i-lucide-award",
-  },
-  {
     name: "projects",
     href: "#projects",
     current: false,
     icon: "i-lucide-code",
-  },
-  {
-    name: "cv",
-    href: "#cv",
-    current: false,
-    icon: "i-lucide-file-text",
   },
   {
     name: "contact",
@@ -233,3 +264,40 @@ onMounted(() => {
   }
 });
 </script>
+<style>
+.globaltransition {
+  animation: perspectiveLeftReturn ease 1.5s;
+}
+
+@-webkit-keyframes perspectiveLeftReturn {
+  0% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: perspective(800px) rotateY(-180deg);
+    transform: perspective(800px) rotateY(-180deg);
+  }
+
+  100% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: perspective(800px) rotateY(0deg);
+    transform: perspective(800px) rotateY(0deg);
+  }
+}
+
+@keyframes perspectiveLeftReturn {
+  0% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: perspective(800px) rotateY(-180deg);
+    transform: perspective(800px) rotateY(-180deg);
+  }
+
+  100% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: perspective(800px) rotateY(0deg);
+    transform: perspective(800px) rotateY(0deg);
+  }
+}
+</style>

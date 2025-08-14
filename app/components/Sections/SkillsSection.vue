@@ -5,7 +5,7 @@
     <!-- skills -->
     <div class="max-w-6xl mx-auto">
       <h1 class="text-4xl text-center md:text-5xl font-bold mb-18">Habilidades</h1>
-      <div class="grid grid-cols-2 md:grid-cols-6 gap-8">
+      <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
         <div class="flex flex-col items-center">
           <UIcon name="i-devicon-plain-html5" class="h-10 w-10" />
           <span class="font-semibold">HTML</span>

@@ -2,7 +2,7 @@
   <div class="relative">
     <div>
       <svg
-        width="500"
+      class="w-xs sm:w-md md:w-sm lg:w-lg"
         viewBox="0 0 530 414"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@
         />
       </svg>
     </div>
-    <div class="absolute top-[-10%] left-5 w-[85%] h-[85%]">
+    <div class="absolute top-[-12%] md:top-[-10%] left-2 w-[90%]">
       <svg
         class="animated"
         id="freepik_stories-coding"

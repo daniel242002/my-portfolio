@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     defaultLocale: "es",
-    langDir: "locales", 
+    langDir: "locales",
     locales: [
       {
         code: "es",
@@ -33,10 +33,22 @@ export default defineNuxtConfig({
       },
     ],
     strategy: "no_prefix",
-     detectBrowserLanguage: {
-    useCookie: true,
-    cookieKey: "i18n_redirected",
-    redirectOn: "root"
-  }
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      redirectOn: "root",
+    },
   },
+
+   image: {
+    dir: 'assets/images',
+    quality: 80,
+    screens: {
+      sm: 320,
+      md: 640,
+      lg: 1024,
+      xl: 1280,
+      '2xl': 1536,
+    }
+  }
 });

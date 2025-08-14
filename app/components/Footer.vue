@@ -4,22 +4,23 @@
     <p class="font-semibold text-4xl text-[#61FF8B]">Daniel Arcos</p>
     <!-- redes sociales -->
     <div class="flex gap-7">
-      <a class="hover:text-white" href="https://github.com/arcosdaniel">
+      <a class="hover:text-white" href="https://github.com/daniel242002" target="_blank" rel="noopener noreferrer">
         <UIcon name="i-grommet-icons-github" class="h-6 w-6" />
       </a>
-      <a class="hover:text-white" href="https://twitter.com/arcosdaniel">
+      <a class="hover:text-white" href="https://facebook.com/danielesteban.arcoscorrea" target="_blank" rel="noopener noreferrer">
         <UIcon name="i-grommet-icons-facebook" class="h-6 w-6" />
       </a>
-      <a class="hover:text-white" href="https://www.linkedin.com/in/arcosdaniel/">
+      <a class="hover:text-white" href="https://linkedin.com/in/daniel-arcos-469bb61ab" target="_blank" rel="noopener noreferrer">
         <UIcon name="i-grommet-icons-linkedin" class="h-6 w-6" />
       </a>
-      <a class="hover:text-white" href="https://www.instagram.com/arcosdaniel/">
+      <a class="hover:text-white" href="https://instagram.com/daniel_arcos24" target="_blank" rel="noopener noreferrer">
         <UIcon name="i-grommet-icons-instagram" class="h-6 w-6" />
       </a>
     </div>
-    <p>&copy; {{ new Date().getFullYear() }} Daniel Arcos. Todos los derechos reservados</p>
+    <p class="font-extrabold dark:font-thin">&copy; {{ new Date().getFullYear() }} Daniel Arcos. {{ t('footer.copyright') }}</p>
   </footer>
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n();
 </script>

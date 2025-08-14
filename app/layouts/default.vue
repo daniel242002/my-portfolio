@@ -8,6 +8,12 @@
           : 'bg-transparent py-3',
       ]"
     />
+    <!-- bg-[var(--navbar-bg-light)] dark:bg-[var(--navbar-bg-dark)] md: -->
+    <Circles />
+    <ClientOnly>
+      <Shades />
+    </ClientOnly>
+
     <UContainer>
       <NuxtPage />
     </UContainer>
@@ -20,6 +26,8 @@ import { es } from "@nuxt/ui/locale";
 import { ref, onMounted, onUnmounted } from "vue";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
+import Shades from "@/components/Shades.vue";
+import Circles from "@/components/Circles.vue";
 
 const isScrolled = ref(true);
 

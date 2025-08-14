@@ -8,19 +8,28 @@
 ---
 
 ## 🚀 Demo en vivo
+
 🔗 **[Ver portafolio desplegado en Vercel](https://tu-portafolio.vercel.app)**
 
-![Preview](https://via.placeholder.com/900x500.png?text=Captura+del+Portafolio)
+<div align="center">
+    <NuxtImg
+          src="/readme-img.png"
+          alt="readme iamge"
+          class="w-full h-auto rounded-lg shadow-md"
+    />
+</div>
 
 ---
 
 ## 📌 Descripción
+
 Este es mi portafolio personal desarrollado con **Nuxt 3** y **Tailwind CSS**, donde muestro mis habilidades, proyectos y formas de contacto.  
 Cuenta con un diseño responsive, animaciones suaves y despliegue automatizado mediante **Vercel**.
 
 ---
 
 ## 🛠️ Tecnologías utilizadas
+
 - [Nuxt 3](https://nuxt.com) – Framework Vue de última generación
 - [Tailwind CSS](https://tailwindcss.com) – Estilos rápidos y responsivos
 - [Vercel](https://vercel.com) – Hosting y CI/CD
@@ -30,6 +39,7 @@ Cuenta con un diseño responsive, animaciones suaves y despliegue automatizado m
 ---
 
 ## ⚙️ Instalación y ejecución local
+
 ```bash
 # Clonar repositorio
 git clone https://github.com/daniel242002/my-portfolio.git
@@ -45,3 +55,4 @@ npm run dev
 
 # Compilar para producción
 npm run build
+```

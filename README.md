@@ -19,14 +19,14 @@
 
 ## 📌 Descripción
 
-Este es mi portafolio personal desarrollado con **Nuxt 3** y **Tailwind CSS**, donde muestro mis habilidades, proyectos y formas de contacto.  
+Este es mi portafolio personal desarrollado con **Nuxt 4** y **Tailwind CSS**, donde muestro mis habilidades, proyectos y donde puedes contactarme.  
 Cuenta con un diseño responsive, animaciones suaves y despliegue automatizado mediante **Vercel**.
 
 ---
 
 ## 🛠️ Tecnologías utilizadas
 
-- [Nuxt 3](https://nuxt.com) – Framework Vue de última generación
+- [Nuxt 4](https://nuxt.com) – Framework Vue de última generación
 - [Tailwind CSS](https://tailwindcss.com) – Estilos rápidos y responsivos
 - [Vercel](https://vercel.com) – Hosting y CI/CD
 - [VueUse](https://vueuse.org/) – Composables útiles para Vue

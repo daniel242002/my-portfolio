@@ -1,6 +1,6 @@
 # 💼 Portafolio Personal – Daniel Arcos
 
-[![Nuxt.js](https://img.shields.io/badge/Nuxt-3-00DC82?style=flat&logo=nuxtdotjs&logoColor=white)](https://nuxt.com)
+[![Nuxt.js](https://img.shields.io/badge/Nuxt-4-00DC82?style=flat&logo=nuxtdotjs&logoColor=white)](https://nuxt.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://vercel.com)
 [![GitHub last commit](https://img.shields.io/github/last-commit/daniel242002/my-portfolio?color=blue&style=flat)](https://github.com/daniel242002/my-portfolio)

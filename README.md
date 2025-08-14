@@ -12,11 +12,7 @@
 🔗 **[Ver portafolio desplegado en Vercel](https://tu-portafolio.vercel.app)**
 
 <div align="center">
-    <NuxtImg
-          src="/readme-img.png"
-          alt="readme iamge"
-          class="w-full h-auto rounded-lg shadow-md"
-    />
+    <img alt="readme image" src="./app/assets/images/readme-img.png" />
 </div>
 
 ---

@@ -86,7 +86,7 @@ const projects = computed(() => [
     name: t("projects.pastry-shop.name"),
     description: t("projects.pastry-shop.description"),
     url: "https://example.com/project3",
-    img: "/projects/pasteleria.png",
+    img: "/projects/pastry-shop.png",
     available: false,
   },
 ]);

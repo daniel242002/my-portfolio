@@ -21,7 +21,7 @@
       <!-- Botón Descargar -->
       <div class="p-4 border-t border-gray-200 dark:border-gray-700">
         <NuxtLink
-          href="/cv-download.pdf"
+          href="/daniel-arcos-cv.pdf"
           download
           class="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md transition"
         >

@@ -3,6 +3,17 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: "app/",
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          href: "/favicon.svg",
+        },
+      ],
+    }
+  },
   compatibilityDate: "2025-07-15",
   modules: ["@nuxt/image", "@nuxt/ui", "@nuxtjs/i18n"],
   css: ["@/assets/css/main.css"],
@@ -40,22 +51,21 @@ export default defineNuxtConfig({
     },
   },
 
-   image: {
-    dir: 'assets/images',
+  image: {
     quality: 80,
     screens: {
       sm: 320,
       md: 640,
       lg: 1024,
       xl: 1280,
-      '2xl': 1536,
-    }
+      "2xl": 1536,
+    },
   },
   runtimeConfig: {
     public: {
       emailjsServiceId: process.env.EMAILJS_SERVICE_ID,
       emailjsTemplateId: process.env.EMAILJS_TEMPLATE_ID,
       emailjsPublicKey: process.env.EMAILJS_PUBLIC_KEY,
-    }
-  }
+    },
+  },
 });

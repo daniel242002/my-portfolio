@@ -1,0 +1,36 @@
+<svg
+    class="h-13 w-13 md:h-14 md:w-14"
+    viewBox="0 0 200 200"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-label="Logo"
+  >
+    <!-- Degradado -->
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0f2027" />
+        <stop offset="100%" stop-color="#2c5364" />
+      </linearGradient>
+
+      <clipPath id="cut">
+        <rect x="0" y="0" width="200" height="100" />
+      </clipPath>
+    </defs>
+
+    <!-- Fondo circular -->
+    <circle cx="100" cy="100" r="90" fill="url(#grad1)" />
+
+    <!-- Letras -->
+    <text
+      x="50%"
+      y="50%"
+      text-anchor="middle"
+      dy=".35em"
+      font-family="Poppins, sans-serif"
+      font-size="80"
+      font-weight="bold"
+      fill="white"
+    >
+      DA
+    </text>
+  </svg>

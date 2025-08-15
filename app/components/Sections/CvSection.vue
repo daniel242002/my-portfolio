@@ -20,13 +20,13 @@
 
       <!-- Botón Descargar -->
       <div class="p-4 border-t border-gray-200 dark:border-gray-700">
-        <NuxtLink
+        <a
           href="/daniel-arcos-cv.pdf"
           download
           class="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md transition"
         >
           <UIcon name="i-heroicons-arrow-down-tray-solid" class="h-6 w-6" />
-        </NuxtLink>
+        </a>
       </div>
     </template>
   </USlideover>

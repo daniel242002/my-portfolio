@@ -50,5 +50,12 @@ export default defineNuxtConfig({
       xl: 1280,
       '2xl': 1536,
     }
+  },
+  runtimeConfig: {
+    public: {
+      emailjsServiceId: process.env.EMAILJS_SERVICE_ID,
+      emailjsTemplateId: process.env.EMAILJS_TEMPLATE_ID,
+      emailjsPublicKey: process.env.EMAILJS_PUBLIC_KEY,
+    }
   }
 });

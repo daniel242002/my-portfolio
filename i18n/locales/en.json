@@ -52,5 +52,15 @@
   },
   "footer": {
     "copyright": "All rights reserved"
+  },
+  "alertMessage": {
+    "success": {
+      "title": "Success",
+      "description": "Mail sent successfully"
+    },
+    "error": {
+      "title": "Error",
+      "description": "Error sending mail"
+    }
   }
 }

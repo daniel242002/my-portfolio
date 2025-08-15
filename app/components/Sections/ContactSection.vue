@@ -2,6 +2,16 @@
   <div
     class="text-[var(--text-color-light)] dark:text-[var(--text-color-dark)] py-10 md:py-14"
   >
+    <UAlert
+      v-if="alertMessage"
+      color="neutral"
+      variant="solid"
+      :title="alertTitle"
+      :description="alertDescription"
+      icon="i-lucide-check-circle"
+      class="fixed top-4 right-4 z-50 w-80 shadow-lg rounded-lg"
+      :class="isLeaving ? 'animate-slideOut' : 'animate-slideIn'"
+    />
     <h2
       class="text-4xl text-center md:text-5xl font-bold dark:font-extralight mb-10 md:mb-14"
     >
@@ -45,7 +55,7 @@
 
         <button
           type="submit"
-          class="w-full bg-green-600 hover:bg-green-700 text-white font-medium dark:font-thin py-2 rounded-md transition"
+          class="w-full bg-green-600 hover:bg-green-700 text-white font-medium dark:font-thin py-2 rounded-md transition cursor-pointer"
         >
           {{ t("contact.btn-send") }}
         </button>
@@ -57,7 +67,12 @@
 <script setup>
 const { t } = useI18n();
 import emailjs from "@emailjs/browser";
-
+import { set } from "@nuxt/ui/runtime/utils/index.js";
+const config = useRuntimeConfig();
+const alertMessage = ref(false);
+const isLeaving = ref(false);
+const alertTitle = ref("");
+const alertDescription = ref("");
 const templateParams = ref({
   name: "",
   email: "",
@@ -67,19 +82,74 @@ const templateParams = ref({
 const sendEmail = async () => {
   try {
     const res = await emailjs.send(
-      "service_q6nuqiq",
-      "template_4yg4mum",
+      config.public.emailjsServiceId,
+      config.public.emailjsTemplateId,
       templateParams.value,
       {
-        publicKey: "pqgsWBXbkI13Hezge",
+        publicKey: config.public.emailjsPublicKey,
       }
     );
-    console.log("SUCCESS!", res.status, res.text);
-    alert("✅ Mensaje enviado correctamente");
+    if (res.status === 200) {
+      alertTitle.value = t("alertMessage.success.title");
+      alertDescription.value = t("alertMessage.success.description");
+      isLeaving.value = false;
+      alertMessage.value = true;
+
+      setTimeout(() => {
+        isLeaving.value = true;
+
+        setTimeout(() => {
+          alertMessage.value = false;
+        }, 400);
+      }, 3000);
+    }
     templateParams.value = { title: "", name: "", email: "", message: "" };
   } catch (error) {
-    console.log(error);
-    alert("❌ Error al enviar el mensaje");
+    alertTitle.value = t("alertMessage.error.title");
+    alertDescription.value = t("alertMessage.error.description");
+    isLeaving.value = false;
+    alertMessage.value = true;
+
+    setTimeout(() => {
+      isLeaving.value = true;
+
+      setTimeout(() => {
+        alertMessage.value = false;
+      }, 400);
+    }, 3000);
+
+    templateParams.value = { title: "", name: "", email: "", message: "" };
   }
 };
 </script>
+<style scoped>
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.animate-slideOut {
+  animation: slideOut 0.4s ease-in forwards;
+}
+</style>

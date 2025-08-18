@@ -19,7 +19,7 @@
           <div class="flex shrink-0 items-center">
             <!-- translate, dark mode, github -->
             <div
-              class="flex md:hidden absolute inset-y-0 right-0 items-center pr-18 md:static md:inset-auto md:ml-6 md:pr-0 gap-3"
+              class="flex md:hidden absolute inset-y-0 right-0 items-center mr-18 md:static md:inset-auto md:ml-6 md:mr-0 gap-3"
             >
               <USelect
                 :items="locales.map((l:any) => ({ label: l.name === 'English' ? 'EN' : 'ES', value: l.code }))"
@@ -54,9 +54,9 @@
             <div
               class="flex shrink-0 items-center text-[var(--text-color-light)] dark:text-gray-300 w-14 md:w-20"
             >
-            <a href="#home">
+            <NuxtLink to="#home">
               <Mylogo />
-            </a>
+            </NuxtLink>
             </div>
           </div>
           <div class="hidden md:ml-4 md:flex flex-col md:justify-center">
@@ -136,6 +136,7 @@
   </Disclosure>
 </template>
 <script setup lang="ts">
+import { NuxtLink } from "#components";
 import {
   Disclosure,
   DisclosureButton,

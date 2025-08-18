@@ -54,7 +54,7 @@
             <div
               class="flex shrink-0 items-center text-[var(--text-color-light)] dark:text-gray-300 w-14 md:w-20"
             >
-            <a href="/">
+            <a href="#home">
               <Mylogo />
             </a>
             </div>

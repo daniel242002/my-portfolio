@@ -78,7 +78,11 @@
                 ]"
                 :aria-current="item.current ? 'page' : undefined"
               >
-                <UIcon :name="item.icon" class="h-4 w-4" />
+                <UIcon
+                  :name="item.icon"
+                  class="h-4 w-4"
+                  aria-label="go to github profile"
+                />
                 <span>{{ $t(`navbar.${item.name}`) }}</span>
               </a>
             </div>

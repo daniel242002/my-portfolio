@@ -15,7 +15,7 @@
       :items="projects"
       class="w-full max-w-sm md:max-w-xl lg:max-w-2xl mx-auto shadow-2xl rounded-lg"
     >
-      <div
+      <article
         class="flex flex-col items-center gap-4 rounded-lg pb-5 md:p-5 border border-gray-200 dark:border-gray-700 bg-[var(--primary-color-light)] dark:bg-slate-800"
       >
         <!-- Imagen -->
@@ -24,7 +24,8 @@
         >
           <NuxtImg
             :src="item.img"
-            :alt="item.name"
+            :alt="`${item.name} - preview of the project`"
+            format="webp"
             loading="lazy"
             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           />
@@ -32,6 +33,8 @@
           <!-- Overlay No disponible -->
           <div
             v-if="!item.available"
+            role="status"
+            aria-label="Project not available"
             class="absolute inset-0 flex items-center justify-center bg-gray-800/70 text-white font-bold text-2xl rounded-t-lg md:rounded-lg"
           >
             {{ t("projects.notice-label") }}
@@ -52,7 +55,7 @@
 
         <!-- Botón -->
         <UButton
-          aria-label="Visit project"
+          :aria-label="`Visit project ${item.name}`"
           role="button"
           @click="visit(item.url)"
           :disabled="!item.available"
@@ -63,7 +66,7 @@
         >
           {{ t("projects.text-btn") }}
         </UButton>
-      </div>
+      </article>
     </UCarousel>
   </div>
 </template>

@@ -3,6 +3,7 @@
     class="text-[var(--text-color-light)] dark:text-[var(--text-color-dark)] py-10 md:py-14"
   >
     <UAlert
+      role="alert"
       v-if="alertMessage"
       color="neutral"
       variant="solid"
@@ -24,27 +25,37 @@
         class="space-y-4 px-4 py-8 sm:px-8 sm:py-10 lg:px-16 lg:py-12 shadow-2xl"
         @submit.prevent="sendEmail"
       >
+        <label for="name" class="sr-only">{{ t("contact.label-name") }}</label>
         <input
           type="text"
           name="name"
           id="name"
+          autocomplete="name"
           :placeholder="t('contact.label-name')"
           v-model="templateParams.name"
           class="w-full rounded-md px-3 py-2 bg-slate-100 border border-gray-200 dark:border-0 dark:bg-slate-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 font-medium dark:font-thin text-[var(--text-color-light)]"
         />
 
+        <label for="email" class="sr-only">{{
+          t("contact.label-email")
+        }}</label>
         <input
           type="email"
           name="email"
           id="email"
+          autocomplete="email"
           v-model="templateParams.email"
           :placeholder="t('contact.label-email')"
           class="w-full rounded-md px-3 py-2 bg-slate-100 border border-gray-200 dark:border-0 dark:bg-slate-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 font-medium dark:font-thin text-[var(--text-color-light)]"
         />
 
+        <label for="message" class="sr-only">{{
+          t("contact.label-message")
+        }}</label>
         <textarea
           name="message"
           id="message"
+          autocomplete="message"
           v-model="templateParams.message"
           :placeholder="t('contact.label-message')"
           rows="4"
@@ -52,7 +63,6 @@
         ></textarea>
 
         <button
-          aria-label="Send message"
           role="button"
           type="submit"
           class="w-full bg-green-600 hover:bg-green-700 text-white font-medium dark:font-thin py-2 rounded-md transition cursor-pointer"

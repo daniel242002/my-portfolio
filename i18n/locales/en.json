@@ -48,7 +48,9 @@
     "btn-send": "Send"
   },
   "cv": {
-    "title": "My CV"
+    "title": "My CV",
+    "btn-download": "Download CV",
+    "btn-view": "View CV"
   },
   "footer": {
     "copyright": "All rights reserved"

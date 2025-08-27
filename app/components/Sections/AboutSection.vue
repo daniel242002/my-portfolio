@@ -32,11 +32,11 @@
     </div>
     <!-- skills -->
     <div class="max-w-6xl mx-auto">
-      <h1
+      <h2
         class="text-4xl text-center md:text-5xl font-bold dark:font-extralight mb-20 md:mb-26"
       >
         {{ t("skills.title") }}
-      </h1>
+      </h2>
       <div
         class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8"
       >
@@ -47,6 +47,8 @@
         >
           <UTooltip :text="skill.tecnology" :delayDuration="100">
             <UIcon
+              role="img"
+              :aria-label="skill.tecnology"
               :name="skill.icon"
               class="h-10 w-10 md:h-15 md:w-15 floating drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]"
             />

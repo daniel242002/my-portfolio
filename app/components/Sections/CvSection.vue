@@ -2,12 +2,13 @@
   <USlideover :title="t('cv.title')" :class="'example'">
     <UButton
       aria-label="Download CV"
-      role="button"
+      rel="noopener noreferrer"
       color="neutral"
       variant="link"
       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition z-50 slow-bounce cursor-pointer"
     >
       <UIcon name="i-heroicons-document-text-solid" class="h-6 w-6" />
+      <span class="sr-only">{{ t("cv.btn-view") }}</span>
     </UButton>
 
     <template #body>
@@ -15,6 +16,11 @@
       <div class="flex-1 overflow-y-auto p-4">
         <NuxtImg
           src="/cv.webp"
+          format="webp"
+          width="800"
+          height="1130"
+          loading="lazy"
+          sizes="(max-width: 768px) 100vw, 800px"
           alt="daniel-arcos-cv"
           class="w-full h-auto rounded-lg shadow-md"
         />
@@ -25,9 +31,11 @@
         <a
           href="/daniel-arcos-cv.pdf"
           download
+          :title="t('cv.btn-download')"
           class="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md transition"
         >
           <UIcon name="i-heroicons-arrow-down-tray-solid" class="h-6 w-6" />
+          <span class="sr-only">{{ t("cv.btn-download") }}</span>
         </a>
       </div>
     </template>

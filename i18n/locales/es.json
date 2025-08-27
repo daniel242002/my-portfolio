@@ -48,7 +48,9 @@
     "btn-send": "Enviar"
   },
   "cv": {
-    "title": "Mi CV"
+    "title": "Mi CV",
+    "btn-download": "Descargar CV",
+    "btn-view": "Ver CV"
   },
   "footer": {
     "copyright": "Todos los derechos reservados"

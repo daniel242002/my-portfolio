@@ -1,15 +1,15 @@
 <template>
   <div>
-    <section id="home" class="scroll-mt-24">
+    <section id="home" class="scroll-mt-24" aria-labelledby="home">
       <HomeSection />
     </section>
-    <section id="about" class="scroll-mt-24">
+    <section id="about" class="scroll-mt-24" aria-labelledby="about">
       <AboutSection />
     </section>
-    <section id="projects" class="scroll-mt-12">
+    <section id="projects" class="scroll-mt-12" aria-labelledby="projects">
       <ProjectsSection />
     </section>
-    <section id="contact" class="scroll-mt-12">
+    <section id="contact" class="scroll-mt-12" aria-labelledby="contact">
       <ContactSection />
     </section>
     <CvSection />

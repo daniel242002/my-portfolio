@@ -2,6 +2,8 @@
   <div class="relative">
     <div>
       <svg
+        aria-hidden="true"
+        focusable="false"
         class="w-xs sm:w-md md:w-sm lg:w-lg"
         viewBox="0 0 530 414"
         fill="none"
@@ -18,9 +20,7 @@
         class="animated"
         id="freepik_stories-coding"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 500 500"
-        version="1.1"
         xmlns:svgjs="http://svgjs.com/svgjs"
       >
         <g

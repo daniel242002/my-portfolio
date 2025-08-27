@@ -49,7 +49,7 @@ body {
   animation-duration: 0.7s;
   animation-timing-function: var(--expo-out);
 }
-      
+
 ::view-transition-new(root) {
   animation-name: reveal-light;
 }

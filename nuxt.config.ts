@@ -19,13 +19,21 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: "2025-07-15",
-  modules: ["@nuxt/image", "@nuxt/ui", "@nuxtjs/i18n"],
+  modules: ["@nuxt/image", "@nuxt/ui", "@nuxtjs/i18n", "@nuxt/fonts"],
   css: ["@/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
     build: {
       cssCodeSplit: false,
     },
+  },
+  fonts: {
+    families: [
+      {
+        name: "Inter",
+        provider: "google", // o "none" si son locales
+      },
+    ],
   },
   colorMode: {
     classSuffix: "",

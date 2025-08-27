@@ -63,7 +63,6 @@
         ></textarea>
 
         <button
-          role="button"
           type="submit"
           class="w-full bg-green-800 hover:bg-green-900 dark:bg-green-600 dark:hover:bg-green-700 text-white font-medium dark:font-thin py-2 rounded-md transition cursor-pointer"
         >

@@ -5,6 +5,9 @@
         <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
+            focusable
+            aria-label="Open main menu"
+            role="button"
             class="relative inline-flex items-center justify-center rounded-md p-2 text-[var(--text-color-light)] dark:text-gray-300 hover:bg-white/5 hover:text-gray-400 focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500"
           >
             <span class="absolute -inset-0.5" />
@@ -28,6 +31,8 @@
               />
               <ClientOnly v-if="!colorMode?.forced">
                 <UButton
+                  aria-label="Toggle dark mode"
+                  role="button"
                   class="cursor-pointer dark:text-[var(--text-color-dark)] text-[var(--text-color-light)] hover:bg-transparent"
                   :icon="
                     colorMode.value === 'dark'
@@ -54,9 +59,9 @@
             <div
               class="flex shrink-0 items-center text-[var(--text-color-light)] dark:text-gray-300 w-14 md:w-20"
             >
-            <NuxtLink to="#home">
-              <Mylogo />
-            </NuxtLink>
+              <NuxtLink to="#home">
+                <Mylogo />
+              </NuxtLink>
             </div>
           </div>
           <div class="hidden md:ml-4 md:flex flex-col md:justify-center">
@@ -91,6 +96,8 @@
           />
           <ClientOnly v-if="!colorMode?.forced">
             <UButton
+              aria-label="Toggle dark mode"
+              role="button"
               class="cursor-pointer dark:text-[var(--text-color-dark)] text-[var(--text-color-light)] hover:bg-transparent"
               :icon="
                 colorMode.value === 'dark' ? 'i-lucide-sun' : 'i-lucide-moon'
@@ -116,6 +123,8 @@
 
       <DisclosurePanel class="md:hidden">
         <DisclosureButton
+          aria-label="Open main menu"
+          role="button"
           v-for="item in navBarItems"
           :key="item.name"
           as="a"

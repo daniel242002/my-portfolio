@@ -38,21 +38,21 @@
         {{ t("skills.title") }}
       </h1>
       <div
-  class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8"
->
-  <div
-    v-for="skill in skills"
-    :key="skill.tecnology"
-    class="flex flex-col items-center"
-  >
-    <UTooltip :text="skill.tecnology" :delayDuration="100">
-      <UIcon
-        :name="skill.icon"
-        class="h-10 w-10 md:h-15 md:w-15 floating drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]"
-      />
-    </UTooltip>
-  </div>
-</div>
+        class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8"
+      >
+        <div
+          v-for="skill in skills"
+          :key="skill.tecnology"
+          class="flex flex-col items-center"
+        >
+          <UTooltip :text="skill.tecnology" :delayDuration="100">
+            <UIcon
+              :name="skill.icon"
+              class="h-10 w-10 md:h-15 md:w-15 floating drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]"
+            />
+          </UTooltip>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -137,12 +137,17 @@ const skills = ref([
 ]);
 </script>
 
-
 <style scoped>
 @keyframes floating {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .floating {

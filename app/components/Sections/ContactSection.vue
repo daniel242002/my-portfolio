@@ -26,6 +26,8 @@
       >
         <input
           type="text"
+          name="name"
+          id="name"
           :placeholder="t('contact.label-name')"
           v-model="templateParams.name"
           class="w-full rounded-md px-3 py-2 bg-slate-100 border border-gray-200 dark:border-0 dark:bg-slate-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 font-medium dark:font-thin text-[var(--text-color-light)]"
@@ -33,12 +35,16 @@
 
         <input
           type="email"
+          name="email"
+          id="email"
           v-model="templateParams.email"
           :placeholder="t('contact.label-email')"
           class="w-full rounded-md px-3 py-2 bg-slate-100 border border-gray-200 dark:border-0 dark:bg-slate-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 font-medium dark:font-thin text-[var(--text-color-light)]"
         />
-        
+
         <textarea
+          name="message"
+          id="message"
           v-model="templateParams.message"
           :placeholder="t('contact.label-message')"
           rows="4"
@@ -46,6 +52,8 @@
         ></textarea>
 
         <button
+          aria-label="Send message"
+          role="button"
           type="submit"
           class="w-full bg-green-600 hover:bg-green-700 text-white font-medium dark:font-thin py-2 rounded-md transition cursor-pointer"
         >

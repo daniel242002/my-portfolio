@@ -5,6 +5,10 @@ export default defineNuxtConfig({
   srcDir: "app/",
   app: {
     head: {
+      title: "Nuxt App",
+      htmlAttrs: {
+        lang: "es",
+      },
       link: [
         {
           rel: "icon",
@@ -12,7 +16,7 @@ export default defineNuxtConfig({
           href: "/favicon.svg",
         },
       ],
-    }
+    },
   },
   compatibilityDate: "2025-07-15",
   modules: ["@nuxt/image", "@nuxt/ui", "@nuxtjs/i18n"],

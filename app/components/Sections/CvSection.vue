@@ -1,6 +1,8 @@
 <template>
   <USlideover :title="t('cv.title')" :class="'example'">
     <UButton
+      aria-label="Download CV"
+      role="button"
       color="neutral"
       variant="link"
       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition z-50 slow-bounce cursor-pointer"
@@ -12,8 +14,8 @@
       <!-- Contenido -->
       <div class="flex-1 overflow-y-auto p-4">
         <NuxtImg
-          src="/cv.png"
-          alt="CV de Daniel Arcos"
+          src="/cv.jpg"
+          alt="daniel-arcos-cv"
           class="w-full h-auto rounded-lg shadow-md"
         />
       </div>

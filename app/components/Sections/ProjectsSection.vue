@@ -25,6 +25,7 @@
           <NuxtImg
             :src="item.img"
             :alt="item.name"
+            loading="lazy"
             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           />
 
@@ -38,7 +39,9 @@
         </div>
 
         <!-- Título -->
-        <h3 class="text-2xl font-semibold dark:font-extralight text-center mt-10 sm:mt-0 px-14">
+        <h3
+          class="text-2xl font-semibold dark:font-extralight text-center mt-10 sm:mt-0 px-14"
+        >
           {{ item.name }}
         </h3>
 
@@ -49,6 +52,8 @@
 
         <!-- Botón -->
         <UButton
+          aria-label="Visit project"
+          role="button"
           @click="visit(item.url)"
           :disabled="!item.available"
           :color="item.available ? 'success' : 'neutral'"
@@ -72,21 +77,21 @@ const projects = computed(() => [
     name: t("projects.sport-partners.name"),
     description: t("projects.sport-partners.description"),
     url: "https://sport-partners.infinityfreeapp.com/",
-    img: "/projects/sport-partners.png",
+    img: "/projects/sport-partners.jpg",
     available: true,
   },
   {
     name: t("projects.saas-system.name"),
     description: t("projects.saas-system.description"),
     url: "https://example.com/project2",
-    img: "/projects/saas.png",
+    img: "/projects/saas.jpg",
     available: false,
   },
   {
     name: t("projects.pastry-shop.name"),
     description: t("projects.pastry-shop.description"),
     url: "https://example.com/project3",
-    img: "/projects/pastry-shop.png",
+    img: "/projects/pastry-shop.jpg",
     available: false,
   },
 ]);

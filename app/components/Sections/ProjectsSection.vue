@@ -33,8 +33,6 @@
           <!-- Overlay No disponible -->
           <div
             v-if="!item.available"
-            role="status"
-            aria-live="polite"
             class="absolute inset-0 flex items-center justify-center bg-gray-800/70 text-white font-bold text-2xl rounded-t-lg md:rounded-lg"
           >
             {{ t("projects.notice-label") }}

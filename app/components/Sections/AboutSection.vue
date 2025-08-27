@@ -48,6 +48,7 @@
           <UTooltip :text="skill.tecnology" :delayDuration="100">
             <UIcon
               role="img"
+              :aria-label="skill.tecnology"
               :name="skill.icon"
               class="h-10 w-10 md:h-15 md:w-15 floating drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_0_12px_rgba(0,255,255,0.6)]"
             />

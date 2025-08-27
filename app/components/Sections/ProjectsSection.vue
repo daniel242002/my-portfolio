@@ -55,6 +55,7 @@
 
         <!-- Botón -->
         <UButton
+          :aria-label="`Visit project ${item.name}`"
           @click="visit(item.url)"
           :disabled="!item.available"
           :color="item.available ? 'success' : 'neutral'"

@@ -14,7 +14,11 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <UIcon name="i-grommet-icons-github" class="h-6 w-6" />
+        <UIcon
+          aria-label="go to github profile"
+          name="i-grommet-icons-github"
+          class="h-6 w-6"
+        />
       </a>
       <a
         class="hover:text-[var(--secondary-color-dark)] dark:hover:text-white"
@@ -22,7 +26,11 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <UIcon name="i-grommet-icons-facebook" class="h-6 w-6" />
+        <UIcon
+          aria-label="go to facebook profile"
+          name="i-grommet-icons-facebook"
+          class="h-6 w-6"
+        />
       </a>
       <a
         class="hover:text-[var(--secondary-color-dark)] dark:hover:text-white"
@@ -30,7 +38,11 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <UIcon name="i-grommet-icons-linkedin" class="h-6 w-6" />
+        <UIcon
+          aria-label="go to linkedin profile"
+          name="i-grommet-icons-linkedin"
+          class="h-6 w-6"
+        />
       </a>
       <a
         class="hover:text-[var(--secondary-color-dark)] dark:hover:text-white"
@@ -38,7 +50,11 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <UIcon name="i-grommet-icons-instagram" class="h-6 w-6" />
+        <UIcon
+          aria-label="go to instagram profile"
+          name="i-grommet-icons-instagram"
+          class="h-6 w-6"
+        />
       </a>
     </div>
     <p class="font-extrabold dark:font-thin">

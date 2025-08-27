@@ -1,6 +1,7 @@
 <template>
   <USlideover :title="t('cv.title')" :class="'example'">
     <UButton
+      aria-label="Download CV"
       rel="noopener noreferrer"
       color="neutral"
       variant="link"

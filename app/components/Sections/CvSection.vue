@@ -14,7 +14,7 @@
       <!-- Contenido -->
       <div class="flex-1 overflow-y-auto p-4">
         <NuxtImg
-          src="/cv.jpg"
+          src="/cv.webp"
           alt="daniel-arcos-cv"
           class="w-full h-auto rounded-lg shadow-md"
         />

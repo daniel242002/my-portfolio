@@ -12,7 +12,7 @@
 🔗 **[Ver portafolio desplegado en Vercel](https://tu-portafolio.vercel.app)**
 
 <div align="center">
-    <img alt="readme image" src="./app/assets/images/readme-img.png" />
+    <img alt="readme image" src="./app/assets/images/readme-img.webp" />
 </div>
 
 ---

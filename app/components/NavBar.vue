@@ -5,7 +5,6 @@
         <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
-            aria-label="Open main menu"
             class="relative inline-flex items-center justify-center rounded-md p-2 text-[var(--text-color-light)] dark:text-gray-300 hover:bg-white/5 hover:text-gray-400 focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500"
           >
             <span class="absolute -inset-0.5" />
@@ -24,13 +23,11 @@
             >
               <USelect
                 :items="locales.map((l:any) => ({ label: l.name === 'English' ? 'EN' : 'ES', value: l.code }))"
-                aria-label="Select language"
                 v-model="value"
                 class="w-auto font-semibold dark:font-thin border-0 bg-transparent"
               />
               <ClientOnly v-if="!colorMode?.forced">
                 <UButton
-                  aria-label="Toggle dark mode"
                   class="cursor-pointer dark:text-[var(--text-color-dark)] text-[var(--text-color-light)] hover:bg-transparent"
                   :icon="
                     colorMode.value === 'dark'
@@ -76,11 +73,7 @@
                 ]"
                 :aria-current="item.current ? 'page' : undefined"
               >
-                <UIcon
-                  :name="item.icon"
-                  class="h-4 w-4"
-                  aria-label="go to github profile"
-                />
+                <UIcon :name="item.icon" class="h-4 w-4" />
                 <span>{{ $t(`navbar.${item.name}`) }}</span>
               </a>
             </div>
@@ -94,12 +87,10 @@
           <USelect
             :items="locales.map((l:any) => ({ label: l.name === 'English' ? 'EN' : 'ES', value: l.code }))"
             v-model="value"
-            aria-label="Select language"
             class="w-auto font-semibold dark:font-thin border-0 bg-transparent"
           />
           <ClientOnly v-if="!colorMode?.forced">
             <UButton
-              aria-label="Toggle dark mode"
               class="cursor-pointer dark:text-[var(--text-color-dark)] text-[var(--text-color-light)] hover:bg-transparent"
               :icon="
                 colorMode.value === 'dark' ? 'i-lucide-sun' : 'i-lucide-moon'
@@ -125,7 +116,6 @@
 
       <DisclosurePanel class="md:hidden">
         <DisclosureButton
-          aria-label="Close main menu"
           v-for="item in navBarItems"
           :key="item.name"
           as="a"

@@ -24,7 +24,6 @@
         <a
           rel="noopener noreferrer"
           href="#contact"
-          aria-label="Contact"
           class="inline-block mt-6 bg-[var(--secondary-color-light)] dark:bg-[var(--secondary-color-dark)] text-white dark:text-[var(--primary-color-dark)] px-5 py-2 rounded-md font-medium hover:bg-[#22c55e] transition"
         >
           {{ t("home.contact") }}

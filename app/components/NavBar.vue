@@ -31,7 +31,6 @@
               <ClientOnly v-if="!colorMode?.forced">
                 <UButton
                   aria-label="Toggle dark mode"
-                  role="button"
                   class="cursor-pointer dark:text-[var(--text-color-dark)] text-[var(--text-color-light)] hover:bg-transparent"
                   :icon="
                     colorMode.value === 'dark'
@@ -101,7 +100,6 @@
           <ClientOnly v-if="!colorMode?.forced">
             <UButton
               aria-label="Toggle dark mode"
-              role="button"
               class="cursor-pointer dark:text-[var(--text-color-dark)] text-[var(--text-color-light)] hover:bg-transparent"
               :icon="
                 colorMode.value === 'dark' ? 'i-lucide-sun' : 'i-lucide-moon'
